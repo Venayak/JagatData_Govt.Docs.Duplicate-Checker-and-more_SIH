@@ -1,0 +1,158 @@
+{
+  "name": "JagatData Event Notifications",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "jagatdata-alerts",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "JagatData Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [260, 300],
+      "webhookId": "jagatdata-alerts"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{$json[\"event\"]}}",
+                    "value2": "duplicate_candidates_found"
+                  }
+                ]
+              }
+            },
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{$json[\"event\"]}}",
+                    "value2": "grievance_filed"
+                  }
+                ]
+              }
+            },
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{$json[\"event\"]}}",
+                    "value2": "application_status_changed"
+                  }
+                ]
+              }
+            },
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{$json[\"event\"]}}",
+                    "value2": "consent_requested"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "id": "switch-event-type",
+      "name": "Route by Event Type",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "={{$env[\"OFFICER_CHAT_ID\"]}}",
+        "text": "=🧬 Duplicate candidates found: {{$json[\"payload\"][\"new_candidates\"]}} new record(s) need officer review in JagatData.",
+        "additionalFields": {}
+      },
+      "id": "notify-duplicates",
+      "name": "Notify: Duplicate Review Needed",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [760, 120],
+      "notes": "Swap for Slack/Email/SMS node as needed"
+    },
+    {
+      "parameters": {
+        "chatId": "={{$env[\"OFFICER_CHAT_ID\"]}}",
+        "text": "=📢 New grievance filed: \"{{$json[\"payload\"][\"subject\"]}}\" ({{$json[\"payload\"][\"priority\"]}} priority) in {{$json[\"payload\"][\"department\"]}}.",
+        "additionalFields": {}
+      },
+      "id": "notify-grievance",
+      "name": "Notify: New Grievance",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [760, 260]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@jagatdata.gov.in",
+        "toEmail": "={{$json[\"payload\"][\"citizen_email\"] || $env[\"DEFAULT_CITIZEN_EMAIL\"]}}",
+        "subject": "=Your JagatData application status changed",
+        "text": "=Your application {{$json[\"payload\"][\"application_id\"]}} moved from {{$json[\"payload\"][\"from\"]}} to {{$json[\"payload\"][\"to\"]}}.",
+        "options": {}
+      },
+      "id": "notify-status-change",
+      "name": "Notify: Application Status Change",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [760, 400]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@jagatdata.gov.in",
+        "toEmail": "={{$json[\"payload\"][\"citizen_email\"] || $env[\"DEFAULT_CITIZEN_EMAIL\"]}}",
+        "subject": "=Consent requested for your data",
+        "text": "=The {{$json[\"payload\"][\"department\"]}} department has requested consent to access your linked records (consent id: {{$json[\"payload\"][\"consent_id\"]}}). Please review in the JagatData citizen portal.",
+        "options": {}
+      },
+      "id": "notify-consent",
+      "name": "Notify: Consent Requested",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [760, 540]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"received\": true, \"event\": $json[\"event\"] } }}"
+      },
+      "id": "respond",
+      "name": "Acknowledge Receipt",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1020, 300]
+    }
+  ],
+  "connections": {
+    "JagatData Webhook": {
+      "main": [[{ "node": "Route by Event Type", "type": "main", "index": 0 }]]
+    },
+    "Route by Event Type": {
+      "main": [
+        [{ "node": "Notify: Duplicate Review Needed", "type": "main", "index": 0 }],
+        [{ "node": "Notify: New Grievance", "type": "main", "index": 0 }],
+        [{ "node": "Notify: Application Status Change", "type": "main", "index": 0 }],
+        [{ "node": "Notify: Consent Requested", "type": "main", "index": 0 }]
+      ]
+    },
+    "Notify: Duplicate Review Needed": { "main": [[{ "node": "Acknowledge Receipt", "type": "main", "index": 0 }]] },
+    "Notify: New Grievance": { "main": [[{ "node": "Acknowledge Receipt", "type": "main", "index": 0 }]] },
+    "Notify: Application Status Change": { "main": [[{ "node": "Acknowledge Receipt", "type": "main", "index": 0 }]] },
+    "Notify: Consent Requested": { "main": [[{ "node": "Acknowledge Receipt", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": {},
+  "meta": {
+    "description": "Import into n8n and set webhook path to 'jagatdata-alerts'. JagatData's backend POSTs every domain event (data_ingested, duplicate_candidates_found, match_resolved, consent_requested, consent_decision, application_submitted, application_status_changed, grievance_filed, grievance_status_changed) to this webhook as JSON: {event, payload, timestamp}."
+  }
+}

@@ -1,0 +1,7 @@
+department,service_name,priority,notes
+Health,Ayushman Bharat Card Issuance,normal,First-time applicant
+Education,Post-Matric Scholarship,high,Family income proof attached
+Welfare,Old Age Pension Enrollment,normal,Age verification pending
+Health,Health Insurance Claim,high,Hospitalization claim
+Welfare,PM-KISAN Registration,normal,Land record linked
+Education,Hostel Fee Reimbursement,low,Awaiting receipts

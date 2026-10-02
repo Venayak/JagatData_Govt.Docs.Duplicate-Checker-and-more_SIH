@@ -1,0 +1,17 @@
+beneficiary_ref,full_name,birth_date,gender_code,phone_no,address_full,aadhaar_l4,scheme_name,beneficiary_status,monthly_benefit_inr
+WEL-0000-999,Mr.RAMESH KUMAR YADAV,1985-04-12,M,+91-9876543210,"House Number 12, Sectortor 15, Rohini, Delhi - 110085",4321,PM-KISAN,Suspended,1500
+WEL-0001-315,Ms.Sunita Devi,1990-08-23,F,+91-9123456780,"House No 45, Sectortor 9, Chandigarh - 160009",8765,Widow Pension,Closed,1500
+WEL-0004-533,Mr. Anil Kumar Singh,1982-06-17,M,77889 90011,"Village Bhagwanpur, Post Office Roorkee, Haridwar - 247667",5566,Old Age Pension,Under Verification,1000
+WEL-0007-109,Mrs.FARIDA BEGUM,1992-07-14,F,93080 01122,"Mohalla Rasoolpur, Near Idgah, Lucknow - 226003",1234,Disability Allowance,Active,1500
+WEL-0009-230,Mrs.KAVITA PATEL,1998-02-28,F,+91-9825566778,"B-14, Satellite Road, Ahmedabad - 380015",3456,PM-KISAN,Under Verification,1000
+WEL-0012-673,Smt. Pooja Iyer,1981-02-15,F,9277982512,"Panampilly Nagar, Kochi - 682036",8167,Old Age Pension,Suspended,1000
+WEL-0014-854,Ms. Shalini Dubey,1977-03-05,F,9397904937,"Kankarbagh, Patna - 800020",3080,Widow Pension,Suspended,500
+WEL-0015-139,Mr. Rohit Das,1993-08-15,M,96790 21952,"Kankarbagh, Patna - 800020",7621,Widow Pension,Under Verification,1000
+WEL-0016-775,Mr.NAVEEN KULKARNI,1992-11-17,M,+91-9784498898,"Salt Lake, Kolkata - 700064",4434,Widow Pension,Active,1500
+WEL-0017-621,Mr.Manoj Kulkarni,1983-10-21,M,+91-9422587334,"Alambagh, Lucknow - 226005",3930,PM-KISAN,Under Verification,1000
+WEL-0020-710,Ms.Geeta Bhatt,1972-12-25,F,9210011233,"Sector 21, Dwarka, Delhi - 110075",3321,LPG Subsidy,Active,2000
+WEL-0022-145,Ms.Meena Kulkarni,1972-07-14,F,+91-9542575984,"Camp Area, Pune - 411001",3335,Disability Allowance,Suspended,1500
+WEL-0023-780,Mr.Rahul Iyer,1975-11-15,M,+91-9527983673,"Kankarbagh, Patna - 800020",9279,Widow Pension,Under Verification,2000
+WEL-0024-813,Mr.Sanjay Iyer,1976-10-01,M,94697 67356,"Vastrapur, Ahmedabad - 380015",8072,LPG Subsidy,Closed,1000
+WEL-0026-661,Ms.MEENA CHAUHAN,1971-07-14,F,+91-9825823125,"Indiranagar, Bengaluru - 560038",3841,Old Age Pension,Closed,3000
+WEL-0028-552,Mr.Manoj Kulkarni,1981-12-18,M,9283541652,"MG Road, Bengaluru - 560001",6710,Old Age Pension,Active,1500

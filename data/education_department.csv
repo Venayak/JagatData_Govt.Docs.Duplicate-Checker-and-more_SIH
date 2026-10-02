@@ -1,0 +1,18 @@
+student_id,StudentName,DOB,Gender,ContactNumber,GuardianAddress,AadhaarLast4,School_College,Class_Course,ScholarshipStatus
+EDU20000,Yadav Ramesh Kumar,1985-04-12,M,987-654-3210,"h.no 12, sector 15, rohini, delhi - 110085",4321,Govt Sr Sec School,Class 12,Approved
+EDU20003,Sharma Priya,1995-11-30,F,8899001122,"Plot 7, Jubilee Hills Rd No 3, Hyderabad - 500033",3344,Kendriya Vidyalaya,Class 12,Pending
+EDU20007,Farida Begum,1992-07-14,F,9308001122,"mohalla rasoolpur, near idgah, lucknow - 226003",1234,Govt Sr Sec School,Class 10,Not Applied
+EDU20008,Vikram Aditya Rathore,1980-09-02,M,9001122334,"Bungalow 5, Civil Lines, Jaipur - 302006",2345,Govt Sr Sec School,Class 10,Approved
+EDU20009,Kavita Patel,1998-02-28,F,982-556-6778,"b-14, satellite road, ahmedabad - 380015",3456,State Polytechnic,Class 12,Not Applied
+EDU20010,Reddy Suresh Babu,1970-05-19,M,9848012345,"Door No 3-4-56, Ameerpet, Hyderabad - 500016",4567,State Polytechnic,Class 10,Not Applied
+EDU20013,N. Menon,1994-04-28,F,919-800-4744,"panampilly nagar, kochi - 682036",7181,State Polytechnic,B.Sc. 1st Year,Not Applied
+EDU20014,Shalini Dubey,1977-03-05,F,939-790-4937,"kankarbagh, patna - 800020",3080,Kendriya Vidyalaya,Class 10,Not Applied
+EDU20015,Rohit Das,1993-08-15,M,9679021952,"Kankarbagh, Patna - 800020",7621,Kendriya Vidyalaya,Class 12,Pending
+EDU20016,N. Kulkarni,1992-11-17,M,9784498898,"Salt Lake, Kolkata - 700064",4434,Govt Sr Sec School,B.A. 2nd Year,Approved
+EDU20017,Manoj Kulkarni,1983-10-21,M,9422587334,"Alambagh, Lucknow - 226005",3930,State Polytechnic,Class 10,Approved
+EDU20019,S. Nair,1998-05-24,F,9870828180,"camp area, pune - 411001",4682,Kendriya Vidyalaya,Class 10,Pending
+EDU20021,A. Mehta,1993-09-16,M,9279789936,"Panampilly Nagar, Kochi - 682036",4901,District Degree College,B.A. 2nd Year,Pending
+EDU20023,Rahul Iyer,1975-11-15,M,9527983673,"kankarbagh, patna - 800020",9279,District Degree College,B.Sc. 1st Year,Rejected
+EDU20026,M. Chauhan,1971-07-14,F,982-582-3125,"Indiranagar, Bengaluru - 560038",3841,State Polytechnic,Diploma - CS,Rejected
+EDU20027,Arjun Dubey,1999-08-17,M,987-160-8373,"chandni chowk, delhi - 110006",5577,District Degree College,B.A. 2nd Year,Pending
+EDU20028,Manoj Kulkarni,1981-12-18,M,9283541652,"MG Road, Bengaluru - 560001",6710,Govt Sr Sec School,Diploma - CS,Rejected
